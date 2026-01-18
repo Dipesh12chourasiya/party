@@ -11,13 +11,15 @@
     <moqui.basic.Enumeration enumId="POSTAL_ADDRESS" enumTypeId="ContactMechType" description="Postal Address"/>
 
     <party.Party partyId="100" partyTypeEnumId="PERSON" createdDate="2026-01-11 11:32:00.000"/>
-    <party.Person partyId="100" firstName="John" lastName="Doe" dateOfBirth="1990-01-01"/>
+    <party.Person partyId="100" firstName="Dipesh" lastName="Roy" dateOfBirth="1990-01-01"/>
 
     <party.Party partyId="101" partyTypeEnumId="PARTY_GROUP" createdDate="2026-01-11 11:32:00.000"/>
-    <party.PartyGroup partyId="101" groupName="Tech Corp" description="Software Company"/>
+    <party.PartyGroup partyId="101" groupName="Hotwax" description="Tech Company"/>
 
-    <party.ContactMech contactMechId="CM-01" contactMechTypeId="EMAIL" infoString="john@example.com"/>
-    <party.ContactMech contactMechId="CM-02" contactMechTypeId="TELECOM_NUMBER" infoString="+1-555-0199"/>
+    <party.ContactMech contactMechId="CM-01" contactMechTypeId="EMAIL" infoString="dipesh@gmail.com"/>
+    <party.ContactMech contactMechId="CM-02" contactMechTypeId="TELECOM_NUMBER" infoString="+91 9494949494"/>
 
-    <party.PartyContactMech partyId="100" contactMechId="CM-01" fromDate="2026-01-11 11:32:00.000"/>
+    <party.PartyContactMech partyId="100" contactMechId="CM-01" fromDate="2026-01-12 10:32:00.000"/>
+    <party.PartyContactMech partyId="101" contactMechId="CM-02" fromDate="2026-01-12 10:32:00.000"/>
+
 </entity-facade-xml>
