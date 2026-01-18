@@ -11,8 +11,6 @@
     <subscreens default-item="FindParty"/>
 
     <widgets>
-        <label type="h1" text="Party List Screen"/>
-
         <container-dialog id="CreatePartyDialog" button-text="Create Party">
             <form-single name="CreateParty" transition="createParty">
                 <auto-fields-entity

@@ -7,12 +7,52 @@
         <entity-find entity-name="party.Party" list="partyList">
             <search-form-inputs/>
         </entity-find>
+
+        <entity-find entity-name="party.Person" list="personList">
+            <search-form-inputs/>
+        </entity-find>
+
+        <entity-find entity-name="party.PartyGroup" list="partyGroupList">
+            <search-form-inputs/>
+        </entity-find>
+
+        <entity-find entity-name="party.ContactMech" list="contactMechList">
+            <search-form-inputs/>
+        </entity-find>
+
+        <entity-find entity-name="party.PartyContactMech" list="partyContactMechList">
+            <search-form-inputs/>
+        </entity-find>
+
     </actions>
 
     <widgets>
-        <form-list name="ListParties" list="partyList" header-dialog="true" skip-form="true">
 
+        <label type="h1" text="Party List"/>
+        <form-list name="ListParties" list="partyList" header-dialog="true" skip-form="true">
             <auto-fields-entity entity-name="party.Party" field-type="find-display"/>
         </form-list>
+
+        <label type="h1" text="Person List"/>
+        <form-list name="ListPersons" list="personList" header-dialog="true" skip-form="true">
+            <auto-fields-entity entity-name="party.Person" field-type="find-display"/>
+        </form-list>
+
+        <label type="h1" text="PartyGroup List"/>
+        <form-list name="ListPartyGroups" list="partyGroupList" header-dialog="true" skip-form="true">
+            <auto-fields-entity entity-name="party.PartyGroup" field-type="find-display"/>
+        </form-list>
+
+        <label type="h1" text="ContactMech List"/>
+        <form-list name="ListContactMechs" list="contactMechList" header-dialog="true" skip-form="true">
+            <auto-fields-entity entity-name="party.ContactMech" field-type="find-display"/>
+        </form-list>
+
+        <label type="h1" text="PartyContactMech List"/>
+        <form-list name="ListPartyContactMechs" list="partyContactMechList" header-dialog="true" skip-form="true">
+            <auto-fields-entity entity-name="party.PartyContactMech" field-type="find-display"/>
+        </form-list>
+
     </widgets>
 </screen>
+
