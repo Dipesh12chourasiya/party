@@ -2,7 +2,7 @@
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
 
-    <service verb="create" noun="Person" type="script"
+    <service verb="create" noun="PersonGroovy" type="script"
              location="component://party/script/org/moqui/party/CreatePersonCustom.groovy">
         <in-parameters>
              <parameter  name="partyId"  required="true"/>
@@ -17,7 +17,6 @@
     </service>
 </services>
 
-
 <!--<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
 <!--          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">-->
 
@@ -25,13 +24,13 @@
 <!--             location="component://party/script/org/moqui/party/CreatePersonCustom.groovy">-->
 
 <!--        <in-parameters>-->
-<!--            <auto-parameters entity-name="moqui.party.Person" include="all"/>-->
+<!--            <auto-parameters entity-name="party.Person" include="all"/>-->
 <!--        </in-parameters>-->
 
 <!--        <out-parameters>-->
-<!--            <auto-parameters entity-name="moqui.party.Person" include="pk" required="true"/>-->
+<!--            <auto-parameters entity-name="party.Person" include="pk" required="true"/>-->
 <!--            <parameter name="responseMessage" type="String"/>-->
 <!--        </out-parameters>-->
-<!--    -->
+
 <!--    </service>-->
 <!--</services>-->
