@@ -2,11 +2,17 @@
 if (!context.partyId) {
     ec.message.addError("partyId is required")
 }
+
+context.firstName = context.firstName?.trim()
+context.lastName  = context.lastName?.trim()
+
 if (!context.firstName) {
     ec.message.addError("firstName is required")
+    return
 }
 if (!context.lastName) {
     ec.message.addError("lastName is required")
+    return
 }
 
 // if validation errors exist, by this it stop execution
@@ -19,7 +25,7 @@ def party = ec.entity.find("party.Party")
 
 if (!party) {
     ec.message.addError("Party with partyId ${partyId} does not exist")
-    return
+    return // fixed the context issue bug
 }
 
 // from docs

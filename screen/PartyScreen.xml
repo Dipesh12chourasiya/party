@@ -4,7 +4,7 @@
         require-authentication="anonymous-all">
 
     <transition name="createParty">
-        <service-call name="create#party.Party"/>
+        <service-call name="org.moqui.party.PartyServices.create#Party"/>
         <default-response url="."/>
     </transition>
 
@@ -16,7 +16,7 @@
                 <auto-fields-entity
                         entity-name="party.Party"
                         field-type="edit"
-                        include="nonpk"/>
+                />
 
                 <field name="submitButton">
                     <default-field title="Create">
