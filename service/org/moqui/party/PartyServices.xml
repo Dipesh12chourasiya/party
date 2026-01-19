@@ -6,6 +6,7 @@
     <service verb="create" noun="Party" type="inline">
         <in-parameters>
             <auto-parameters include="all"/>
+            <parameter name="createdDate" default-value="${ec.user.nowTimestamp}"/>
         </in-parameters>
         <out-parameters>
             <auto-parameters include="pk" required="true"/>

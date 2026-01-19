@@ -25,7 +25,7 @@ def party = ec.entity.find("party.Party")
 
 if (!party) {
     ec.message.addError("Party with partyId ${partyId} does not exist")
-    return // fixed the context issue bug
+    return
 }
 
 // from docs
