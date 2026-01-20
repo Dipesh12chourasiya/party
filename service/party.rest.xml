@@ -14,4 +14,15 @@
         </method>
     </resource>
 
+
+    <resource name="partyGroups" displayName="List of Party Group" >
+        <method type="get">
+            <entity name="party.PartyGroup" operation="list" />
+        </method>
+
+        <method type="post">
+            <service name="org.moqui.party.PartyGroupServices.create#PartyGroupGroovy"/>
+        </method>
+    </resource>
+
 </resource>

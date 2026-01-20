@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-2.1.xsd">
+
+    <service verb="create" noun="PartyGroupGroovy" type="script"
+             location="component://party/script/org/moqui/party/CreatePartyGroupCustom.groovy">
+        <in-parameters>
+            <parameter  name="partyId"  required="true"/>
+            <parameter name="groupName"  required="true"/>
+            <parameter name="description"  required="true"/>
+        </in-parameters>
+
+        <out-parameters>
+            <parameter name="responseMessage" type="String"/>
+        </out-parameters>
+    </service>
+</services>
