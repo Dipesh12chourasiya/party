@@ -12,11 +12,22 @@
 
     <widgets>
         <container-dialog id="CreatePartyDialog" button-text="Create Party">
+
             <form-single name="CreateParty" transition="createParty">
                 <auto-fields-entity
                         entity-name="party.Party"
                         field-type="edit"
-                />
+                        include="pk"/>
+
+<!--        Created dropdown of Party Type -->
+                <field name="partyTypeEnumId" >
+                    <default-field >
+                        <drop-down>
+                            <option key="PERSON" />
+                            <option key="PARTY_GROUP" />
+                        </drop-down>
+                    </default-field>
+                </field>
 
                 <field name="submitButton">
                     <default-field title="Create">
