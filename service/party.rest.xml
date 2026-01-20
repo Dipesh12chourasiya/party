@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/rest-api-3.xsd"
+          name="party" displayName="Party REST API" version="1.0.0"
+          description="API for Person Entity" require-authentication="anonymous-all">
+
+    <resource name="persons" displayName="List of persons" >
+        <method type="get">
+            <entity name="party.Person" operation="list" />
+        </method>
+
+        <method type="post">
+            <service name="org.moqui.party.PersonServices.create#PersonGroovy"/>
+        </method>
+    </resource>
+
+</resource>
