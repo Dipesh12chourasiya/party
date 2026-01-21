@@ -5,20 +5,55 @@
     <!--    Inline service-->
     <service verb="create" noun="Party" type="inline">
         <in-parameters>
-            <auto-parameters include="all"/>
-            <parameter name="createdDate" default-value="${ec.user.nowTimestamp}"/>
+            <parameter name="partyTypeEnumId" required="true" />
         </in-parameters>
         <out-parameters>
             <auto-parameters include="pk" required="true"/>
         </out-parameters>
         <actions>
             <entity-make-value entity-name="party.Party" value-field="party"/>
+            <set field="createdDate" value="${ec.user.nowTimestamp}" />
             <entity-set value-field="party" include="all"/>
             <if condition="!party.partyId">
                 <entity-sequenced-id-primary value-field="party"/>
             </if>
             <entity-create value-field="party"/>
+
+            <message type="success" public="true">
+                Party created successfully. Party ID: ${party.partyId}
+            </message>
         </actions>
     </service>
 
+
+    <!--    Groovy Service    -->
+    <service verb="create" noun="PartyWithContacts"
+             type="script"
+             location="component://party/script/org/moqui/party/PartyWithContacts.groovy">
+
+        <in-parameters>
+            <!-- Party -->
+            <parameter name="partyTypeEnumId" required="true"/>
+
+            <!-- Person -->
+            <parameter name="firstName"/>
+            <parameter name="lastName"/>
+            <parameter name="dateOfBirth" type="Date"/>
+
+            <!-- Party Group -->
+            <parameter name="groupName"/>
+            <parameter name="description"/>
+
+            <!-- Contacts -->
+            <parameter name="emailAddress"/>
+            <parameter name="phoneNumber"/>
+            <parameter name="postalAddress"/>
+        </in-parameters>
+
+        <out-parameters>
+            <parameter name="partyId"/>
+            <parameter name="responseMessage" type="String"/>
+        </out-parameters>
+
+    </service>
 </services>

@@ -3,41 +3,9 @@
         xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/xml-screen-2.1.xsd"
         require-authentication="anonymous-all">
 
-    <transition name="createParty">
-        <service-call name="org.moqui.party.PartyServices.create#Party"/>
-        <default-response url="."/>
-    </transition>
-
     <subscreens default-item="FindParty"/>
 
     <widgets>
-        <container-dialog id="CreatePartyDialog" button-text="Create Party">
-
-            <form-single name="CreateParty" transition="createParty">
-                <auto-fields-entity
-                        entity-name="party.Party"
-                        field-type="edit"
-                        include="pk"/>
-
-<!--        Created dropdown of Party Type -->
-                <field name="partyTypeEnumId" >
-                    <default-field >
-                        <drop-down>
-                            <option key="PERSON" />
-                            <option key="PARTY_GROUP" />
-                        </drop-down>
-                    </default-field>
-                </field>
-
-                <field name="submitButton">
-                    <default-field title="Create">
-                        <submit/>
-                    </default-field>
-                </field>
-            </form-single>
-        </container-dialog>
-
         <subscreens-active/>
     </widgets>
 </screen>
-
