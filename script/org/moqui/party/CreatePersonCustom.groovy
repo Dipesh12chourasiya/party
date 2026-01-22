@@ -39,6 +39,11 @@ if (!party) {
 def person = ec.entity.makeValue("party.Person")
 person.setFields(context, true, null, null)
 
+// Map service context fields to Person entity
+// true  -> empty/null values bhi set honge
+// null  -> include all fields
+// null  -> exclude none
+
 //  Create Person
 person.create()
 
